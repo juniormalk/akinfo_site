@@ -180,6 +180,12 @@
             console.log(data);
             if (data.status == 'success') {
               alert('Mensagem enviada com sucesso!');
+              //clear form
+              $('#nome').val('');
+              $('#email').val('');
+              $('#mensagem').val('');
+              $('#phone').val('');
+              
             } else {
               alert('Erro ao enviar mensagem!');
             }
