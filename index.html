@@ -164,6 +164,7 @@
           'message': $('#mensagem').val(),
           'phone': $('#phone').val()
         };
+        console.log(formData);
         $.ajax({
           type: 'POST',
           url: 'sendmail.php',

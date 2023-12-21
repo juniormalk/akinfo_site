@@ -28,8 +28,8 @@ $mail->Password = 'Aguiav0@alto';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;    
 
-$mail->setFrom($email); //Sender
-$mail->addAddress('junior@akinfo.com.br');
+$mail->setFrom($email); 
+$mail->addAddress('junior@akinfo.com.br', 'AK Info');
 $mail->addReplyTo($email, $name);
 
 $mail->isHTML(true);                                  // Set email format to HTML
