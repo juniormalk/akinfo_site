@@ -154,6 +154,8 @@
   <!-- inserir jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
+    // validate form with name email phone and message required
+   
     // ajax to send mail
     $(document).ready(function () {
       $('form').submit(function (event) {
@@ -165,20 +167,24 @@
           'phone': $('#phone').val()
         };
         console.log(formData);
-        $.ajax({
-          type: 'POST',
-          url: 'sendmail.php',
-          data: formData,
-          dataType: 'json',
-          encode: true
-        }).done(function (data) {
-          console.log(data);
-          if (data.success) {
-            alert('Mensagem enviada com sucesso!');
-          } else {
-            alert('Erro ao enviar mensagem!');
-          }
-        });
+        if (formData.name == '' || formData.email == '' || formData.message == '' || formData.phone == '') {
+          alert('Preencha todos os campos!');
+        } else {
+          $.ajax({
+            type: 'POST',
+            url: 'sendmail.php',
+            data: formData,
+            dataType: 'json',
+            encode: true
+          }).done(function (data) {
+            console.log(data);
+            if (data.status == 'success') {
+              alert('Mensagem enviada com sucesso!');
+            } else {
+              alert('Erro ao enviar mensagem!');
+            }
+          });
+        }
       });
     });
   </script>
