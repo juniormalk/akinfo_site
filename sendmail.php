@@ -11,7 +11,7 @@ require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 $name = $_POST['name'];
 $sender = $_POST['email'];
 $phone = $_POST['phone'];
-$subject = $_POST['subject'];
+// $subject = $_POST['subject'];
 $message = $_POST['message'];
 
 //sendmail using phpmailer and gmail
@@ -34,7 +34,7 @@ $mail->addReplyTo($email, $name);
 
 $mail->isHTML(true);                                  // Set email format to HTML
 $message = "Name: $name <br> Email: $email <br> Phone: $phone <br> Subject: $subject <br> Message: $message";
-$mail->Subject = 'Testing mail';
+$mail->Subject = 'Contato do site - AK Info';
 $mail->Body    = $message;
 $mail->AltBody = $message;
 

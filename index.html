@@ -120,6 +120,10 @@
               <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
             </div>
             <div class="mb-3">
+              <label for="Telefone" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="phone" placeholder="Digite seu telefone">
+            </div>
+            <div class="mb-3">
               <label for="email" class="form-label">E-mail</label>
               <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
             </div>
@@ -155,9 +159,10 @@
       $('form').submit(function (event) {
         event.preventDefault();
         var formData = {
-          'nome': $('input[name=nome]').val(),
-          'email': $('input[name=email]').val(),
-          'mensagem': $('textarea[name=mensagem]').val()
+          'name': $('#name').val(),
+          'email': $('#email').val(),
+          'message': $('#mensagem').val(),
+          'phone': $('#phone').val()
         };
         $.ajax({
           type: 'POST',
