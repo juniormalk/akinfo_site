@@ -42,5 +42,5 @@ if(!$mail->send()) {
     //json response
     $reponse = array('status' => 'error', 'message' => 'Message could not be sent.');
 } else {
-    echo 'Message has been sent';
+    $reponse = array('status' => 'error', 'message' => 'Message could not be sent.');
 }
