@@ -23,7 +23,7 @@ $mail->CharSet = 'UTF-8';                                // Enable verbose debug
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com;';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'junior@akinfo.com.br';                 // SMTP username
+$mail->Username = 'juniormalk';                 // SMTP username
 $mail->Password = 'Aguiav0@alto';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;    
@@ -42,5 +42,6 @@ if(!$mail->send()) {
     //json response
     $reponse = array('status' => 'error', 'message' => 'Message could not be sent.');
 } else {
-    $reponse = array('status' => 'error', 'message' => 'Message could not be sent.');
+    $reponse = array('status' => 'success', 'message' => 'Message has been sent');
 }
+echo json_encode($reponse);
