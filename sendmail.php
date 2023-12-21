@@ -9,7 +9,7 @@ require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 
 $name = $_POST['name'];
-$sender = $_POST['email'];
+$email = $_POST['email'];
 $phone = $_POST['phone'];
 // $subject = $_POST['subject'];
 $message = $_POST['message'];
