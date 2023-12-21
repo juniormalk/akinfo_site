@@ -33,7 +33,7 @@ $mail->addAddress('junior@akinfo.com.br', 'AK Info');
 $mail->addReplyTo($email, $name);
 
 $mail->isHTML(true);                                  // Set email format to HTML
-$message = "Name: $name <br> Email: $email <br> Phone: $phone <br> Subject: $subject <br> Message: $message";
+$message = "Name: $name <br> Email: $email <br> Phone: $phone <br><br> Message: $message";
 $mail->Subject = 'Contato do site - AK Info';
 $mail->Body    = $message;
 $mail->AltBody = $message;
