@@ -45,7 +45,9 @@ $mail->Port = 587;
 $mail->setFrom($email); 
 $mail->addAddress('junior@akinfo.com.br', 'AK Info');
 $mail->addReplyTo($email, $name);
-$mail->addCustomHeader('Disposition-Notification-To', 'dalves@inviron.com.br');
+$mail->addCustomHeader('Disposition-Notification-To:dalves@inviron.com.br');
+$mail->AddCustomHeader( 'X-pmrqc: 1' );
+$mail->AddCustomHeader( "X-Confirm-Reading-To:dalves@inviron.com.br" );
 
 
 $mail->isHTML(true); 
