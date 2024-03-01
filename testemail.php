@@ -48,7 +48,8 @@ $mail->addReplyTo($email, $name);
 $mail->addCustomHeader('Disposition-Notification-To', 'dalves@inviron.com.br');
 
 
-$mail->isHTML(true);                                  // Set email format to HTML
+$mail->isHTML(true); 
+                                 // Set email format to HTML
 $message = "Name: $name <br> Email: $email <br> Phone: $phone <br><br> Message: $message";
 $mail->Subject = 'Contato do site - AK Info';
 $mail->Body    = $message;
