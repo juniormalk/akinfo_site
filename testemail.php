@@ -7,9 +7,23 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/phpmailer/phpmailer/src/Exception.php';
 require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require 'vendor/phpmailer/phpmailer/src/SMTP.php';
+/* 
+<?php
+$to = "email@destinatario.com";
+$subject = "Assunto do e-mail";
+$message = "Corpo do e-mail";
 
+$headers = "From: seuemail@seudominio.com\r\n";
+$headers .= "Reply-To: seuemail@seudominio.com\r\n";
+$headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+$headers .= "Disposition-Notification-To: seuemail@seudominio.com\r\n";
+
+mail($to, $subject, $message, $headers);
+?> */
 $name = "Demerval Alves Junior";
-$email = 'junior@akinfo.com.br';
+$email = 'juniormalk@gmail.com';
 $phone = $_POST['phone'];
 // $subject = $_POST['subject'];
 $message = 'TESTE DE CONFIRMAÇÂO DE LEITURA';
@@ -29,8 +43,10 @@ $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, 
 $mail->Port = 587;    
 
 $mail->setFrom($email); 
-$mail->addAddress('juniormalk@gmail.com.br', 'AK Info');
+$mail->addAddress('junior@akinfo.com.br', 'AK Info');
 $mail->addReplyTo($email, $name);
+$mail->addCustomHeader('Disposition-Notification-To', 'dalves@inviron.com.br');
+
 
 $mail->isHTML(true);                                  // Set email format to HTML
 $message = "Name: $name <br> Email: $email <br> Phone: $phone <br><br> Message: $message";
