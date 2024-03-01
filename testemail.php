@@ -9,7 +9,7 @@ require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 
 $name = "Demerval Alves Junior";
-$email = 'juniormalk@gmail.com';
+$email = 'junior@akinfo.com.br';
 $phone = $_POST['phone'];
 // $subject = $_POST['subject'];
 $message = 'TESTE DE CONFIRMAÇÂO DE LEITURA';
@@ -29,7 +29,7 @@ $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, 
 $mail->Port = 587;    
 
 $mail->setFrom($email); 
-$mail->addAddress('junior@akinfo.com.br', 'AK Info');
+$mail->addAddress('juniormalk@gmail.com.br', 'AK Info');
 $mail->addReplyTo($email, $name);
 
 $mail->isHTML(true);                                  // Set email format to HTML
